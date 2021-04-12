@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Hello Wilder !</h1>
+<ul>
+    {% for product in products %}
+    {% if loop.first %}
+        <li> 
+    {% endif %}
+
+        {{product }}
+
+    {% if loop.index % 3 == 0 %}
+</li><li>
+    {% endif %}
+    {% if loop.last %}
+</li> 
+    {% endif %}
+{% endfor %}
+</ul>
+{{dump(products)}}
+{% endblock %}
